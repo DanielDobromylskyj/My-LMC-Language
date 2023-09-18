@@ -1,0 +1,68 @@
+>> Known Bugs:
+Nested Loops OR If statements breaking (Try to avoid for now)
+
+
+>> Abbreviations
+
+Types:
+<int> -> Can be any variable OR value that is a intiger
+<char> -> Can be any varaible OR value that is a char
+
+Variables:
+<VarType> -> A Variable Type e.g. "int" or "char"
+<Var> -> A Variable of a given type
+
+Signs <Sign>:
+ ==
+ >=
+ <=
+ >
+ <
+
+Operators <operator>:
+ +
+ -
+ *
+ / (Always rounds to closest whole number)
+ %
+
+Other:
+... -> Some Code
+
+
+>> Declaration Of A Variable
+
+<VarType> <VarName> = <Value>
+
+E.g.
+int TheAnswer = 42
+
+
+>> Performing Mathmatical Opperations
+
+<int> = <int> <operator> <int>
+
+E.g.
+Total = subTotal1 + subTotal2
+
+
+>> Looping (for)
+
+LOOP <int>
+	...
+NEXT
+
+> The <int> is the number of times to loop
+
+E.g.
+LOOP 5
+	OUTPUT TheAnswer
+NEXT
+
+>> If statements:
+
+IF <Var> <Sign> <Var>
+	...
+ENDIF
+
+
