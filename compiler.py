@@ -319,10 +319,27 @@ class Program:
                 f"IF_SUCCEED{self.IfsUsed} LDA lmc_tmp1",
             ])
 
+        elif Sign == ">=":
+            self.Compiled.extend([
+                f"LDA lmc_tmp1",
+                f"SUB lmc_tmp2",
+                f"BRP IF_SUCCEED{self.IfsUsed}",
+                f"BRA IF_FAILED{self.IfsUsed}",
+                f"IF_SUCCEED{self.IfsUsed} LDA lmc_tmp1",
+            ])
+        elif Sign == "<=":
+            self.Compiled.extend([
+                f"LDA lmc_tmp2",
+                f"SUB lmc_tmp1",
+                f"BRP IF_SUCCEED{self.IfsUsed}",
+                f"BRA IF_FAILED{self.IfsUsed}",
+                f"IF_SUCCEED{self.IfsUsed} LDA lmc_tmp1",
+            ])
         elif Sign == ">":
             self.Compiled.extend([
                 f"LDA lmc_tmp1",
                 f"SUB lmc_tmp2",
+                f"BRZ IF_FAILED{self.IfsUsed}",
                 f"BRP IF_SUCCEED{self.IfsUsed}",
                 f"BRA IF_FAILED{self.IfsUsed}",
                 f"IF_SUCCEED{self.IfsUsed} LDA lmc_tmp1",
@@ -331,6 +348,7 @@ class Program:
             self.Compiled.extend([
                 f"LDA lmc_tmp2",
                 f"SUB lmc_tmp1",
+                f"BRZ IF_FAILED{self.IfsUsed}",
                 f"BRP IF_SUCCEED{self.IfsUsed}",
                 f"BRA IF_FAILED{self.IfsUsed}",
                 f"IF_SUCCEED{self.IfsUsed} LDA lmc_tmp1",
